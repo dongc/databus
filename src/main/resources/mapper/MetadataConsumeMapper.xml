@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.znlhzl.databus.mapper.MetadataConsumeMapper">
+    <resultMap id="BaseResultMap" type="com.znlhzl.databus.entity.MetadataConsume">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="NO" jdbcType="INTEGER" property="no"/>
+        <result column="FLOW_NO" jdbcType="VARCHAR" property="flowNo"/>
+        <result column="MSCHEMA" jdbcType="VARCHAR" property="mschema"/>
+        <result column="MTABLE" jdbcType="VARCHAR" property="mtable"/>
+        <result column="RECORD_PK" jdbcType="VARCHAR" property="recordPk"/>
+        <result column="CHANGE_TYPE" jdbcType="VARCHAR" property="changeType"/>
+        <result column="CHANGE_DATE" jdbcType="TIMESTAMP" property="changeDate"/>
+        <result column="DETAIL" jdbcType="VARCHAR" property="detail"/>
+        <result column="OP_TYPE" jdbcType="VARCHAR" property="opType"/>
+        <result column="OPERATOR" jdbcType="VARCHAR" property="operator"/>
+        <result column="OP_TIME" jdbcType="TIMESTAMP" property="opTime"/>
+        <result column="OP_RE" jdbcType="VARCHAR" property="opRe"/>
+    </resultMap>
+</mapper>

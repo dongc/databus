@@ -1,0 +1,67 @@
+server:
+  port: 8312
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.znlhzl.databus.entity
+
+mapper:
+  mappers: com.znlhzl.databus.common.MyMapper
+
+# 应用
+spring:
+  profiles:
+    active: dev
+
+  rocketmq:
+    name-server-address: 10.0.0.221:9876
+    # 可选, 如果无需发送消息则忽略该配置
+    producer-group: databus-producer
+    # 发送超时配置毫秒数, 可选, 默认3000
+    send-msg-timeout: 5000
+    # 追溯消息具体消费情况的开关，默认打开
+    trace-enabled: true
+    # 是否启用VIP通道，默认打开
+    vip-channel-enabled: false
+
+  datasource:
+    name: test
+    url: jdbc:mysql://rm-uf66r28355w321bx5.mysql.rds.aliyuncs.com:3306/bi?useUnicode=true&characterEncoding=utf8
+    username: bi_rw
+    password: Znlhzlbi-DB@rw_20181010
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    druid:
+      filters: stat,log4j
+
+# canal client
+canal:
+  client:
+    instances:
+      crm:
+        host: 10.0.0.221
+        port: 11111
+        batchSize: 1000
+#            zookeeperAddress: 192.168.1.247:2181
+#            clusterEnabled: true
+#       监听vip实例配置
+#        vip:
+#            host: 10.0.0.221
+#            port: 11111
+#            batchSize: 1000
+##            zookeeperAddress: 192.168.1.247:2181
+##            clusterEnabled: true
