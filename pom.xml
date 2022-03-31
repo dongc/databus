@@ -45,7 +45,7 @@
         <mysql.version>5.1.42</mysql.version>
         <mybatis.generate.version>1.0.0</mybatis.generate.version>
         <mybatis.mapper.version>1.2.4</mybatis.mapper.version>
-        <springboot.version>1.5.4.RELEASE</springboot.version>
+        <springboot.version>2.5.12</springboot.version>
         <starter.canal.version>0.0.4</starter.canal.version>
     </properties>
 
